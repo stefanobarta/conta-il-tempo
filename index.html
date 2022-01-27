@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=initial-scale=1.0">
+    <title>contare il tempo</title>
+</head>
+<body>
+<script>
+    let i=0;
+    let start = Date.now();
+    let items = [];
+
+
+    function inputToArray() {
+        let str="";
+        let boxvalue=(Date.now() - start);
+        items.push(boxvalue);
+        //console.log(ia);
+        str=str+","+boxvalue;
+        document.getElementById('out').innerHTML=items;
+        return false;
+      }
+
+    function printArray(){
+        let str=""; 
+        for(i=0;i<items.length;i++)
+        {
+        str=str+" "+items[i].value;
+        }
+        return str;
+        }
+        function count() {
+        document.getElementById("out").innerHTML="Done in " + (Date.now() - start) + " ms";
+        }
+</script>
+
+        <p>clicca per salvare i tempi in un array</p>
+        <button type="button" onclick='inputToArray()'>Invia</button>
+
+      <p id="out"></p>
+
+
+    
+</body>
+</html>
